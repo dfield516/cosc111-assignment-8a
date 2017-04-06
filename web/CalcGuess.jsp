@@ -31,12 +31,17 @@
                     // Inform the user if their guess is correct or not        
                     if (guess.getNum() == guess.getGuess())
                     {
+                        guess.setTries(guess.getTries() + 1);
                         out.println("Correct! You have guessed correctly.");
                     }
-                    if (guess.getNum() < guess.getGuess())
+                    if (guess.getNum() < guess.getGuess()){
                         out.println("Incorrect! Go lower.");
-                    if (guess.getNum() > guess.getGuess())
-                        out.println("Incorrect! Go higher.");                                         
+                        guess.setTries(guess.getTries() + 1);
+                    }
+                    if (guess.getNum() > guess.getGuess()){
+                        out.println("Incorrect! Go higher.");
+                    guess.setTries(guess.getTries() + 1);
+                    }
                 %>
             </p>            
         </h2>
@@ -60,5 +65,13 @@
         <p>
             <a href="GuessingGame.jsp">Start a new guessing game</a>
         </p>
+        <p>
+            <%
+            // your scores
+            out.println("you guessed: " + guess.getAllGuesses() + "<br>") ;
+
+            %>
+        </p>
+        
     </body>
 </html>

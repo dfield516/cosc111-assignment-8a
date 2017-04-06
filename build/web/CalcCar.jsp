@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : CalcCar.jsp
     Created on : Apr 4, 2017, 9:27:17 AM
@@ -14,5 +15,6 @@ You entered<BR>
 Car Price: $<%= user.getCarprice()%><BR>
 Your calculated values:<br>
 Monthly Payment: $<%= user.getMonthlyPayment()%><BR>
+Total Interest On Loan:  $<%= user.TotalInt()%><BR> 
 </BODY>
 </HTML>

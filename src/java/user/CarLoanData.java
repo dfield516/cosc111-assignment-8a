@@ -1,4 +1,4 @@
-package user;
+ package user;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,6 +15,7 @@ public class CarLoanData {
     int carprice;
     int loanlen;
     double expreturn;
+    double APR;
 
     public int getCarprice() {
         return carprice;
@@ -43,5 +44,36 @@ public class CarLoanData {
     public double getMonthlyPayment()
     {
         return (double)carprice / (double)loanlen;
+    }
+    
+    public double getAPR()
+    {
+        return APR;
+    }
+    
+    public void setAPR(double APR)
+    {
+        this.APR = APR;
+    
+    }
+    public double getTotalWithAPR()
+    {
+        return (double) loanlen; 
+    }
+    public double TotalInt()
+    {
+        double intrest = carprice;
+        double totalIntrest = 0;
+        //return 2;
+        for(int i=1; i<=loanlen; i++)
+        {
+            
+            
+            intrest = intrest - getMonthlyPayment();
+            intrest = intrest * (1 + (expreturn*0.01/12));
+            
+        }
+        totalIntrest = intrest;
+    return totalIntrest;
     }
 }
